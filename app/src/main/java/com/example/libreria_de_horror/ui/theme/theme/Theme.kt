@@ -11,17 +11,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
+   /* primary = Purple80,
     secondary = PurpleGrey80,
-    tertiary = Pink80
+    tertiary = Pink80*/
+
+    primary = RojoTierra80,
+    secondary = DoradoSuave80,
+    background = Color(0xFF1A1A1A),   // Fondo oscuro
+    surface = Color(0xFF1A1A1A),
+    onPrimary = BeigeClaro80,
+    onSecondary = BeigeClaro80,
+    onBackground = BeigeClaro80,
+    onSurface = BeigeClaro80
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
+   /* primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40
 
-    /* Other default colors to override
+    Other default colors to override
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
     onPrimary = Color.White,
@@ -30,7 +39,30 @@ private val LightColorScheme = lightColorScheme(
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),
     */
+
+    primary = RojoTierra40,
+    secondary = DoradoSuave40,
+    background = BeigeClaro40,
+    surface = BeigeClaro40,
+    onPrimary = Color(0xFF1A1A1A),
+    onSecondary = Color(0xFF1A1A1A),
+    onBackground = Color(0xFF1A1A1A),
+    onSurface = Color(0xFF1A1A1A)
 )
+
+@Composable
+fun Libreria_de_HorrorTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+    val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
+
+    MaterialTheme(
+        colorScheme = colorScheme,
+        typography = Typography,
+        content = content
+    )
+}
 
 @Composable
 fun Hilt_y_retrofitTheme(

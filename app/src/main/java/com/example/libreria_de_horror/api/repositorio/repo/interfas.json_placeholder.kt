@@ -8,5 +8,5 @@ interface JSONPlaceholder {
     suspend fun obtener_publicaciones(): List<Publicacion>
 
     @GET("/posts/{id}/comments")
-    suspend fun obtener_comentarios_de_publicacion(@Path("id") id: Int): List<Comentario>
+    suspend fun obtener_comentarios_de_publicacion(@Path("id") id: Int): List<comentario>
 }

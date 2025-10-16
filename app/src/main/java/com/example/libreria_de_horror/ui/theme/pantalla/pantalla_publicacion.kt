@@ -14,8 +14,10 @@ fun PantallaPublicacion(
     modificador: Modifier = Modifier,
     controlador_publicaciones: ControladorPublicaciones = hiltViewModel()
 ){
-    controlador_publicaciones.obtener_publicaciones()
-    controlador_publicaciones.seleccionar_publicacion(1)
+    /*
+     controlador_publicaciones.obtener_publicaciones()
+        controlador_publicaciones.seleccionar_publicacion(1)
+     */
 
     val publicacion = controlador_publicaciones.publicacion_seleccionada.value
     val comentarios by controlador_publicaciones.comentarios

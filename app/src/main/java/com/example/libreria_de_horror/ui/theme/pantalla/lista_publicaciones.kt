@@ -1,26 +1,42 @@
 package com.example.hilt_y_retrofit.ui.pantallas
 
+import android.util.Log
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.example.libreria_de_horror.Controladores.Controlador_Publicaciones
+import androidx.navigation.compose.rememberNavController
+import com.example.libreria_de_horror.controladores.ControladorPublicaciones
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier,
-             controlodar_publicaciones: Controlador_Publicaciones = hiltViewModel()
+fun ListaPublicaciones(
+    modificador: Modifier = Modifier,
+    controlodar_publicaciones: ControladorPublicaciones = hiltViewModel(),
+    navegar_a_publiacion: () -> Unit = {}
 ) {
+    Log.v("PantallaPublicacion", "Valor del cotnrolador: ${controlodar_publicaciones}")
+
     controlodar_publicaciones.obtener_publicaciones()
 
     if(controlodar_publicaciones.publicaciones.value.size > 0){
         Column(modifier = Modifier.verticalScroll(rememberScrollState())){
             for(publicacion in controlodar_publicaciones.publicaciones.value){
-                Text("Publicacion: ${publicacion.title}")
-                Text("${publicacion.body}")
+                Column(modifier = Modifier.padding(10.dp)
+                    .clickable {
+                        controlodar_publicaciones.seleccionar_publicacion(id = publicacion.id)
+                        navegar_a_publiacion()
+                    }) {
+                    Text("Publicacion: ${publicacion.title}")
+                    Text("${publicacion.body}")
+                }
+
             }
         }
     }
@@ -32,5 +48,5 @@ fun Greeting(name: String, modifier: Modifier = Modifier,
 @Preview(showBackground = true)
 @Composable
 fun Previsualizacion(){
-    Greeting("Mundo")
+    ListaPublicaciones()
 }
