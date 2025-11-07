@@ -6,8 +6,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.libreria_de_horror.ui.pantalla.lista_publicacioines
-import com.example.libreria_de_horror.ui.pantalla.pantalla_publicacion
+import com.example.libreria_de_horror.ui.theme.pantalla.ListaPublicaciones
+import com.example.libreria_de_horror.ui.theme.pantalla.PantallaPublicacion
 
 @Composable
 fun NavegacionPrincipal(modificador: Modifier = Modifier){
@@ -15,7 +15,7 @@ fun NavegacionPrincipal(modificador: Modifier = Modifier){
 
     NavHost(navController = control_navegacion, startDestination = PantallaListaPublicaiciones){
         composable<PantallaListaPublicaiciones> {
-            lista_publicaciones(modificador, navegar_a_publiacion = { control_navegacion.navigate(PantallaPublicacion) })
+            ListaPublicaciones(modificador, navegar_a_publiacion = { control_navegacion.navigate(PantallaPublicacion) })
         }
 
         composable<PantallaPublicacion> {

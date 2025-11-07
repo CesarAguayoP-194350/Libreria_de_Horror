@@ -5,45 +5,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-// nueva tipografia
-import androidx.compose.ui.text.googlefonts.GoogleFont
-import androidx.compose.ui.unit.sp
-import androidx.compose.ui.text.googlefonts.Font as GoogleFontResource
-import androidx.compose.ui.text.googlefonts.FontFamily as GoogleFontFamily
-
-// Configura la fuente desde Google Fonts
-private val provider = GoogleFont.Provider(
-    providerAuthority = "com.google.android.gms.fonts",
-    providerPackage = "com.google.android.gms",
-    certificates = R.array.com_google_android_gms_fonts_certs
-)
-
-// Nombre exacto de la fuente (como aparece en Google Fonts)
-private val bbhSansBartle = GoogleFont("BBH Sans Bartle")
-
-val BBHSansBartleFontFamily = GoogleFontFamily(
-    googleFont = bbhSansBartle,
-    fontProvider = provider
-)
-
-// Define la tipografía de tu app
-val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = BBHSansBartleFontFamily,
-        fontSize = 16.sp
-    ),
-    titleLarge = TextStyle(
-        fontFamily = BBHSansBartleFontFamily,
-        fontSize = 22.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = BBHSansBartleFontFamily,
-        fontSize = 12.sp
-    )
-)
 
 // Set of Material typography styles to start with
-/*val Typography = Typography(
+val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
@@ -51,7 +15,7 @@ val Typography = Typography(
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
     )
-     Other default text styles to override
+    /* Other default text styles to override
     titleLarge = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
@@ -66,4 +30,5 @@ val Typography = Typography(
         lineHeight = 16.sp,
         letterSpacing = 0.5.sp
     )
-)*/
+    */
+)

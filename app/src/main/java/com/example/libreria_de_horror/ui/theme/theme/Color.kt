@@ -2,10 +2,10 @@ package com.example.libreria_de_horror.ui.theme.theme
 
 import androidx.compose.ui.graphics.Color
 
-val RojoTierra80 = Color(0xFF873E23)   // Rojo oscuro terroso
-val BeigeClaro80 = Color(0xFFEEEEE4)   // Fondo claro
-val DoradoSuave80 = Color(0xFFEAB676)  // Detalles y acentos
+val Purple80 = Color(0xFFD0BCFF)
+val PurpleGrey80 = Color(0xFFCCC2DC)
+val Pink80 = Color(0xFFEFB8C8)
 
-val RojoTierra40 = Color(0xFF873E23)   // Rojo oscuro terroso
-val BeigeClaro40 = Color(0xFFEEEEE4)   // Fondo claro
-val DoradoSuave40 = Color(0xFFEAB676)  // Detalles y acentos
+val Purple40 = Color(0xFF6650a4)
+val PurpleGrey40 = Color(0xFF625b71)
+val Pink40 = Color(0xFF7D5260)

@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.hilt_y_retrofit.ui.pantallas.Greeting
+import com.example.libreria_de_horror.ui.theme.controladores.NavegacionPrincipal
 import com.example.libreria_de_horror.ui.theme.theme.Hilt_y_retrofitTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,10 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Hilt_y_retrofitTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    NavegacionPrincipal(Modifier.padding(innerPadding))
                 }
             }
         }

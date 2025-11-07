@@ -6,6 +6,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.libreria_de_horror.api.JSONPlaceholder
+import com.example.libreria_de_horror.api.repositorio.repo.repositorio.InterfazAlmacenPlaceholder
+import com.example.libreria_de_horror.modelos.Comentario
 import com.example.libreria_de_horror.modelos.Publicacion
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -21,7 +23,7 @@ class ControladorPublicaciones @Inject constructor(
 
     val publicacion_seleccionada: State<Publicacion> = base_de_datos.publicacion_seleccionada
 
-    val comentarios: State<List<comentario>> = base_de_datos.comentarios
+    val comentarios: State<List<Comentario>> = base_de_datos.comentarios
 
     fun obtener_comentarios(){
         viewModelScope.launch {

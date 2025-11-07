@@ -33,6 +33,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -40,31 +41,33 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         compose = true
     }
 }
 
 dependencies {
-    // Para integrar Dagger Hilt y sus herramientas necesarias.
+    // Dependencias para Hilt
     implementation(libs.hilt.android)
     implementation(libs.hilt.viewmodel)
+    implementation(libs.androidx.navigation.compose.android)
     ksp(libs.hilt.android.compilador)
 
-    val androidxhiltCompiler = "1.3.0" // Cambioar a 1.2.0
+    val androidxhiltCompiler = "1.3.0"
     implementation("androidx.hilt:hilt-work:${androidxhiltCompiler}")
     ksp("androidx.hilt:hilt-compiler:${androidxhiltCompiler}")
 
     // Dependencia para Hilt y evitar errores extraños
     implementation("androidx.work:work-runtime-ktx:2.7.0")
 
-    // Para instalar Retrofit
+    // Retrofit + OkHttp
     implementation(libs.okhttp)
     implementation(libs.retrofit)
     implementation(libs.gson.converter)
     implementation(libs.logging.interceptor)
 
-
+    // AndroidX + Jetpack Compose
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -73,6 +76,12 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // ELIMINADO: Google Fonts (causaba errores)
+    // implementation(libs.androidx.ui.text.google.fonts)
+    // implementation(libs.androidx.navigation.compose.jvmstubs)
+
+    // Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
